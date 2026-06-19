@@ -27,20 +27,51 @@ export default function EnrollmentForm() {
     batch: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', phone: '', class: '11', batch: '' });
-      setSubmitted(false);
-    }, 4000);
+    setIsSubmitting(true);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "90f4840e-c4db-4022-b165-078e05befe6d";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          phone: formData.phone,
+          class: formData.class,
+          batch: formData.batch || "Any Batch",
+          subject: `New Lead: ${formData.name} (Class ${formData.class})`
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', phone: '', class: '11', batch: '' });
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        console.error("Web3Forms submission failed:", result);
+        alert("Something went wrong. Please try again or chat via WhatsApp.");
+      }
+    } catch (err) {
+      console.error("Web3Forms submission error:", err);
+      alert("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -182,10 +213,11 @@ export default function EnrollmentForm() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 btn-stamp text-base flex items-center justify-center gap-2 mt-2"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 btn-stamp text-base flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={18} />
-                  Book Free Demo Class
+                  {isSubmitting ? 'Sending Request...' : 'Book Free Demo Class'}
                 </button>
 
                 {/* WhatsApp Alternative */}
