@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -10,34 +9,69 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  icons: {
-    icon: [
+  metadataBase: new URL('https://punjabclasses.com'),
+  title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+  description:
+    'Crack JEE Mains & Advanced with Punjab Classes. Online coaching by Gurwinder Singh Sir — Ex-Senior Faculty at ALLEN, AAKASH & BANSAL with 21+ years of experience. Small batches, personalized mentoring, and 99% success rate. Book your free demo class today!',
+  keywords: [
+    'JEE coaching online',
+    'JEE Mains preparation',
+    'JEE Advanced coaching',
+    'Punjab Classes',
+    'online JEE classes',
+    'best JEE coaching India',
+    'IIT JEE preparation',
+    'Class 11 JEE coaching',
+    'Class 12 JEE coaching',
+    'ALLEN faculty online classes',
+    'small batch JEE coaching',
+    'Gurwinder Singh JEE coach',
+  ],
+  authors: [{ name: 'Punjab Classes' }],
+  creator: 'Punjab Classes',
+  publisher: 'Punjab Classes',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://punjabclasses.com',
+    siteName: 'Punjab Classes',
+    title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+    description:
+      'Crack JEE Mains & Advanced with expert mentoring. 21+ years experience, 1000+ students trained, 99% success rate. Book a free demo class now.',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/hero-classroom.png',
+        width: 1200,
+        height: 630,
+        alt: 'Punjab Classes - Premium JEE Coaching',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Punjab Classes | Best Online JEE Coaching',
+    description:
+      'Crack JEE with Ex-ALLEN, AAKASH & BANSAL faculty. 21+ years experience. Book a free demo class today!',
+    images: ['/hero-classroom.png'],
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#0f2240',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -47,9 +81,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="canonical" href="https://punjabclasses.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'EducationalOrganization',
+              name: 'Punjab Classes',
+              description:
+                'Premier online JEE Mains & Advanced coaching by experienced faculty from ALLEN, AAKASH & BANSAL.',
+              url: 'https://punjabclasses.com',
+              telephone: '+91-98765-43210',
+              email: 'info@punjabclasses.com',
+              foundingDate: '2003',
+              founder: {
+                '@type': 'Person',
+                name: 'Gurwinder Singh',
+                jobTitle: 'Senior JEE Coach',
+              },
+              sameAs: ['https://wa.me/919876543210'],
+              offers: {
+                '@type': 'Offer',
+                name: 'JEE Coaching Classes',
+                description:
+                  'Online JEE Mains & Advanced classes for Class 11 & 12',
+                price: '0',
+                priceCurrency: 'INR',
+                availability: 'https://schema.org/LimitedAvailability',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
