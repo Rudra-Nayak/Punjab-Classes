@@ -1,35 +1,35 @@
 'use client';
 
-import { MessageCircle, Phone, Mail, MapPin, GraduationCap, ArrowRight, Heart } from 'lucide-react';
-import Image from 'next/image';
+import { MessageCircle, Phone, Mail, GraduationCap, ArrowRight, Heart, Sunrise, Sun, Sunset, Moon } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <footer id="contact" className="relative overflow-hidden">
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-navy-800 via-navy-700 to-navy-800 py-16 px-4">
+      <div className="bg-[#1B3358] py-16 px-4 text-white border-t-2 border-[#1B3358]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative">
-            <div className="absolute -inset-20 bg-amber-500/5 rounded-full blur-3xl" />
-            <div className="relative">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Transform Your <span className="text-gradient">JEE Journey</span>?
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#F1EDE3] mb-4 font-heading">
+                Ready to Transform Your <span className="text-[#B23A2E]">JEE Journey</span>?
               </h2>
-              <p className="text-white/60 mb-8 max-w-xl mx-auto">
+              <p className="text-white/70 mb-8 max-w-xl mx-auto text-sm sm:text-base font-sans">
                 Join 1000+ successful students who cracked JEE with Punjab Classes. Limited seats
                 available for the upcoming batch.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center items-stretch sm:items-center">
                 <button
                   onClick={() => scrollToSection('enrollment')}
-                  className="group px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-navy-900 rounded-xl font-bold text-lg hover:from-amber-400 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/20 flex items-center justify-center gap-2 btn-shimmer"
+                  className="px-8 py-4 bg-[#B23A2E] text-white border-2 border-white rounded-[4px] font-bold text-lg shadow-[4px_4px_0px_#C98A2C] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_#C98A2C] transition-all active:translate-x-[3px] active:translate-y-[3px] active:shadow-none flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   Book Free Demo Today
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -38,9 +38,9 @@ export default function Footer() {
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 glass rounded-xl font-bold text-lg text-white hover:bg-white/15 transition-all flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-[4px] font-bold text-lg shadow-[4px_4px_0px_rgba(255,255,255,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgba(255,255,255,0.2)] transition-all active:translate-x-[3px] active:translate-y-[3px] active:shadow-none flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  <MessageCircle size={20} className="text-green-400" />
+                  <MessageCircle size={20} className="text-[#25D366]" />
                   WhatsApp Us
                 </a>
               </div>
@@ -50,48 +50,48 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="bg-navy-900 py-16 px-4">
+      <div className="bg-[#FAF8F5] py-16 px-4 text-[#1B3358] border-t border-[#1B3358]/10 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             {/* About */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <GraduationCap size={22} className="text-navy-900" />
+                <div className="w-10 h-10 bg-[#1B3358] border border-[#1B3358] rounded-[4px] flex items-center justify-center shadow-[2px_2px_0px_#B23A2E]">
+                  <GraduationCap size={22} className="text-[#F1EDE3]" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">
-                    Punjab <span className="text-amber-400">Classes</span>
+                  <h4 className="text-lg font-bold text-[#1B3358] font-heading">
+                    Punjab <span className="text-[#B23A2E]">Classes</span>
                   </h4>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-amber-400/60 font-medium">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#C98A2C] font-bold -mt-0.5 font-mono">
                     Est. 2003
                   </p>
                 </div>
               </div>
-              <p className="text-white/50 text-sm leading-relaxed mb-5">
-                Premier online coaching for JEE Mains & Advanced. Expert faculty from ALLEN,
-                AAKASH & BANSAL with 21+ years of experience in shaping future engineers.
+              <p className="text-[#4A5163] text-sm leading-relaxed mb-5 font-sans">
+                Premier online coaching for JEE Mains &amp; Advanced. Expert faculty from ALLEN,
+                AAKASH &amp; BANSAL with 21+ years of experience in shaping future engineers.
               </p>
               <div className="flex gap-3">
                 <a
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 transition-all hover:scale-110"
+                  className="w-10 h-10 bg-[#1B3358]/5 hover:bg-[#1B3358]/10 border border-[#1B3358]/20 rounded-[4px] flex items-center justify-center text-[#25D366] transition-all hover:scale-105"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle size={18} />
                 </a>
                 <a
                   href="tel:+919876543210"
-                  className="w-10 h-10 bg-blue-500/20 hover:bg-blue-500/30 rounded-xl flex items-center justify-center text-blue-400 transition-all hover:scale-110"
+                  className="w-10 h-10 bg-[#1B3358]/5 hover:bg-[#1B3358]/10 border border-[#1B3358]/20 rounded-[4px] flex items-center justify-center text-[#1B3358] transition-all hover:scale-105"
                   aria-label="Call us"
                 >
                   <Phone size={18} />
                 </a>
                 <a
                   href="mailto:info@punjabclasses.com"
-                  className="w-10 h-10 bg-amber-500/20 hover:bg-amber-500/30 rounded-xl flex items-center justify-center text-amber-400 transition-all hover:scale-110"
+                  className="w-10 h-10 bg-[#1B3358]/5 hover:bg-[#1B3358]/10 border border-[#1B3358]/20 rounded-[4px] flex items-center justify-center text-[#B23A2E] transition-all hover:scale-105"
                   aria-label="Email us"
                 >
                   <Mail size={18} />
@@ -101,10 +101,10 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h5 className="text-white font-bold mb-5 text-sm uppercase tracking-wider">
+              <h5 className="text-[#1B3358] font-bold mb-5 text-xs uppercase tracking-wider font-mono">
                 Quick Links
               </h5>
-              <ul className="space-y-3">
+              <ul className="space-y-3 font-sans">
                 {[
                   { label: 'Home', id: 'hero' },
                   { label: 'About Instructor', id: 'instructor' },
@@ -116,9 +116,9 @@ export default function Footer() {
                   <li key={link.id}>
                     <button
                       onClick={() => scrollToSection(link.id)}
-                      className="text-white/50 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group"
+                      className="text-[#4A5163] hover:text-[#B23A2E] transition-colors text-sm flex items-center gap-2 group font-semibold"
                     >
-                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform text-[#B23A2E]" />
                       {link.label}
                     </button>
                   </li>
@@ -128,19 +128,19 @@ export default function Footer() {
 
             {/* Class Timings */}
             <div>
-              <h5 className="text-white font-bold mb-5 text-sm uppercase tracking-wider">
+              <h5 className="text-[#1B3358] font-bold mb-5 text-xs uppercase tracking-wider font-mono">
                 Class Timings
               </h5>
-              <div className="space-y-3">
-                <p className="text-amber-400 font-medium text-sm">Mon, Wed, Fri</p>
+              <div className="space-y-3 font-sans">
+                <p className="text-[#C98A2C] font-bold text-xs uppercase font-mono">Mon, Wed, Fri</p>
                 {[
-                  { emoji: '🌅', time: '7:00 AM – 8:20 AM' },
-                  { emoji: '☀️', time: '4:00 PM – 5:20 PM' },
-                  { emoji: '🌆', time: '5:40 PM – 7:00 PM' },
-                  { emoji: '🌙', time: '7:30 PM – 8:50 PM' },
+                  { icon: Sunrise, time: '7:00 AM – 8:20 AM' },
+                  { icon: Sun, time: '4:00 PM – 5:20 PM' },
+                  { icon: Sunset, time: '5:40 PM – 7:00 PM' },
+                  { icon: Moon, time: '7:30 PM – 8:50 PM' },
                 ].map((slot, i) => (
-                  <p key={i} className="text-white/50 text-sm flex items-center gap-2">
-                    <span>{slot.emoji}</span> {slot.time}
+                  <p key={i} className="text-[#4A5163] text-sm flex items-center gap-2 font-mono">
+                    <slot.icon size={16} className="text-[#B23A2E]" /> {slot.time}
                   </p>
                 ))}
               </div>
@@ -148,51 +148,51 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h5 className="text-white font-bold mb-5 text-sm uppercase tracking-wider">
+              <h5 className="text-[#1B3358] font-bold mb-5 text-xs uppercase tracking-wider font-mono">
                 Contact Us
               </h5>
-              <div className="space-y-4">
+              <div className="space-y-4 font-sans text-sm">
                 <a
                   href="tel:+919876543210"
-                  className="flex items-center gap-3 text-white/50 hover:text-amber-400 transition-colors text-sm group"
+                  className="flex items-center gap-3 text-[#4A5163] hover:text-[#B23A2E] transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                    <Phone size={16} />
+                  <div className="w-8 h-8 rounded-[4px] bg-[#1B3358]/5 flex items-center justify-center group-hover:bg-[#1B3358]/10 transition-colors">
+                    <Phone size={14} className="text-[#1B3358]" />
                   </div>
-                  <span>+91 98765 43210</span>
+                  <span className="font-semibold">+91 98765 43210</span>
                 </a>
                 <a
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/50 hover:text-emerald-400 transition-colors text-sm group"
+                  className="flex items-center gap-3 text-[#4A5163] hover:text-[#25D366] transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
-                    <MessageCircle size={16} />
+                  <div className="w-8 h-8 rounded-[4px] bg-[#1B3358]/5 flex items-center justify-center group-hover:bg-[#25D366]/10 transition-colors">
+                    <MessageCircle size={14} className="text-[#25D366]" />
                   </div>
-                  <span>WhatsApp Us</span>
+                  <span className="font-semibold">WhatsApp Us</span>
                 </a>
                 <a
                   href="mailto:info@punjabclasses.com"
-                  className="flex items-center gap-3 text-white/50 hover:text-amber-400 transition-colors text-sm group"
+                  className="flex items-center gap-3 text-[#4A5163] hover:text-[#B23A2E] transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                    <Mail size={16} />
+                  <div className="w-8 h-8 rounded-[4px] bg-[#1B3358]/5 flex items-center justify-center group-hover:bg-[#B23A2E]/10 transition-colors">
+                    <Mail size={14} className="text-[#B23A2E]" />
                   </div>
-                  <span>info@punjabclasses.com</span>
+                  <span className="font-semibold">info@punjabclasses.com</span>
                 </a>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">
+          <div className="border-t border-[#1B3358]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-[#4A5163]/60">
+            <p>
               © {currentYear} Punjab Classes. All rights reserved.
             </p>
-            <p className="text-white/40 text-sm flex items-center gap-1">
+            <p className="flex items-center gap-1 font-bold">
               Helping students crack JEE since 2003 with{' '}
-              <Heart size={14} className="text-red-400 fill-red-400" /> &amp; dedication
+              <Heart size={12} className="text-[#B23A2E] fill-[#B23A2E]" /> &amp; dedication
             </p>
           </div>
         </div>

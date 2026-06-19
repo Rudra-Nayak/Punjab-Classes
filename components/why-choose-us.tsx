@@ -25,43 +25,31 @@ export default function WhyChooseUs() {
       icon: Users,
       title: 'Small Batch Size',
       description: 'Only 15–20 students per batch for personalized attention and individual doubt solving.',
-      gradient: 'from-blue-500 to-indigo-600',
-      bg: 'bg-blue-50',
     },
     {
       icon: BookOpen,
       title: 'Expert Faculty',
       description: 'Learn from experienced faculty who have taught at ALLEN, AAKASH & BANSAL — India\'s top institutes.',
-      gradient: 'from-emerald-500 to-teal-600',
-      bg: 'bg-emerald-50',
     },
     {
       icon: Video,
       title: 'Live Interactive Classes',
       description: 'Real-time classes with live interaction, screen sharing, and instant Q&A sessions.',
-      gradient: 'from-purple-500 to-violet-600',
-      bg: 'bg-purple-50',
     },
     {
       icon: MessageCircle,
       title: 'Doubt Solving Sessions',
       description: 'Dedicated doubt clearing sessions every week to ensure zero confusion and strong foundations.',
-      gradient: 'from-rose-500 to-pink-600',
-      bg: 'bg-rose-50',
     },
     {
       icon: Clock,
       title: 'Structured Schedule',
       description: 'Well-planned weekly schedule with balanced theory, problem-solving, and revision sessions.',
-      gradient: 'from-amber-500 to-orange-600',
-      bg: 'bg-amber-50',
     },
     {
       icon: BarChart3,
       title: 'Progress Tracking',
       description: 'Regular tests and performance analysis to track progress and identify improvement areas.',
-      gradient: 'from-cyan-500 to-sky-600',
-      bg: 'bg-cyan-50',
     },
   ];
 
@@ -71,19 +59,19 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="why-us" className="py-24 px-4 bg-section-light" ref={ref}>
+    <section id="why-us" className="py-24 px-4 bg-section-light border-t border-[#1B3358]/10" ref={ref}>
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <p className="text-amber-600 font-semibold text-sm tracking-widest uppercase mb-3">
-            Our Advantage
+          <p className="text-[#C98A2C] font-bold text-xs tracking-widest uppercase mb-3 font-mono">
+            OUR ADVANTAGE
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Why Choose <span className="text-gradient-blue">Punjab Classes</span>?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B3358] mb-4 font-heading">
+            Why Choose <span className="text-[#B23A2E]">Punjab Classes</span>?
           </h2>
-          <div className="section-divider mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to crack JEE Mains & Advanced with personalized mentoring and
+          <div className="w-20 h-1 bg-[#B23A2E] rounded-[2px] mx-auto mb-6" />
+          <p className="text-base md:text-lg text-[#4A5163] max-w-2xl mx-auto font-sans">
+            Everything you need to crack JEE Mains &amp; Advanced with personalized mentoring and
             expert guidance
           </p>
         </div>
@@ -95,23 +83,23 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className={`group glass-card rounded-2xl p-7 card-hover ${
+                className={`group exam-card rounded-[4px] p-6 transition-all duration-300 ${
                   inView ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
-                {/* Icon */}
+                {/* Icon Container */}
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}
+                  className="w-12 h-12 rounded-[4px] bg-[#1B3358]/10 text-[#1B3358] flex items-center justify-center mb-5 group-hover:bg-[#1B3358] group-hover:text-[#F1EDE3] transition-all duration-300"
                 >
-                  <Icon size={26} className="text-white" />
+                  <Icon size={24} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-navy-600 transition-colors">
+                <h3 className="text-lg font-bold text-[#1B3358] mb-2 font-heading">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <p className="text-[#4A5163] text-sm leading-relaxed font-sans">{feature.description}</p>
               </div>
             );
           })}
@@ -119,25 +107,24 @@ export default function WhyChooseUs() {
 
         {/* Highlight Banner */}
         <div
-          className={`mt-16 relative overflow-hidden rounded-2xl ${
+          className={`mt-16 relative overflow-hidden rounded-[4px] border-2 border-[#1B3358] bg-[#1B3358] text-[#F1EDE3] shadow-[6px_6px_0px_#B23A2E] ${
             inView ? 'animate-fade-in-up delay-700' : 'opacity-0'
           }`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-800 via-navy-700 to-navy-800" />
-          <div className="absolute inset-0 bg-[url('/students-success.png')] bg-cover bg-center opacity-15" />
-          <div className="relative px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="absolute inset-0 bg-[url('/students-success.png')] bg-cover bg-center opacity-5 pointer-events-none" />
+          <div className="relative px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 z-10">
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-white mb-2">
-                🎯 Limited Seats Available
+              <p className="text-2xl md:text-3xl font-bold text-[#F1EDE3] mb-2 font-heading">
+                Limited Seats Available
               </p>
-              <p className="text-white/70 max-w-xl">
-                Only 15–20 students per batch to ensure quality education and personalized
+              <p className="text-[#F1EDE3]/80 max-w-xl text-sm font-sans">
+                Only <span className="font-bold text-white">15–20 students</span> per batch to ensure quality education and personalized
                 attention. Don&apos;t miss your chance to join!
               </p>
             </div>
             <button
               onClick={scrollToEnrollment}
-              className="flex-shrink-0 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-navy-900 rounded-xl font-bold text-lg hover:from-amber-400 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/20 flex items-center gap-2 group btn-shimmer"
+              className="px-8 py-4 btn-stamp text-lg flex items-center gap-2 group whitespace-nowrap"
             >
               Enroll Now
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
