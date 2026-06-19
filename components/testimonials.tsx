@@ -26,7 +26,7 @@ export default function Testimonials() {
       name: 'Arjun Patel',
       class: 'Class 12',
       score: '98%ile JEE Mains',
-      text: 'Gurwinder sir\'s teaching methodology is exceptional. His focus on conceptual clarity rather than rote learning helped me score 98%ile in JEE Mains. The small batch size ensured all my doubts were cleared instantly.',
+      text: 'Sir\'s teaching methodology is exceptional. His focus on conceptual clarity rather than rote learning helped me score 98%ile in JEE Mains. The small batch size ensured all my doubts were cleared instantly.',
       rating: 5,
       initials: 'AP',
     },
@@ -34,7 +34,7 @@ export default function Testimonials() {
       name: 'Priya Sharma',
       class: 'Class 11',
       score: '82% Marks Class 11',
-      text: 'I was struggling with mathematics before joining Punjab Classes. Sir\'s personalized approach and the weekly doubt sessions transformed my understanding completely. Highly recommend for serious JEE aspirants!',
+      text: 'I was struggling with mathematics before joining EliteJEE Classes. Sir\'s personalized approach and the weekly doubt sessions transformed my understanding completely. Highly recommend for serious JEE aspirants!',
       rating: 5,
       initials: 'PS',
     },
@@ -58,7 +58,7 @@ export default function Testimonials() {
       name: 'Rohit Mehra',
       class: 'Class 12',
       score: 'IIT Bombay CSE',
-      text: 'Punjab Classes didn\'t just prepare me for JEE — it built my problem-solving mindset. The level of individual attention is unmatched. I credit my IIT Bombay selection to Sir\'s guidance.',
+      text: 'EliteJEE Classes didn\'t just prepare me for JEE — it built my problem-solving mindset. The level of individual attention is unmatched. I credit my IIT Bombay selection to Sir\'s guidance.',
       rating: 5,
       initials: 'RM',
     },
@@ -95,7 +95,7 @@ export default function Testimonials() {
           </h2>
           <div className="w-20 h-1 bg-[#B23A2E] rounded-[2px] mx-auto mb-6" />
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-sans">
-            Hear from students who have transformed their JEE preparation with Punjab Classes
+            Hear from students who have transformed their JEE preparation with EliteJEE Classes
           </p>
         </div>
 

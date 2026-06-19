@@ -23,7 +23,7 @@ export default function Footer() {
                 Ready to Transform Your <span className="text-[#B23A2E]">JEE Journey</span>?
               </h2>
               <p className="text-white/70 mb-8 max-w-xl mx-auto text-sm sm:text-base font-sans">
-                Join 1000+ successful students who cracked JEE with Punjab Classes. Limited seats
+                Join 1000+ successful students who cracked JEE with EliteJEE Classes. Limited seats
                 available for the upcoming batch.
               </p>
               <div className="flex flex-col sm:flex-row gap-5 justify-center items-stretch sm:items-center">
@@ -61,7 +61,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-[#1B3358] font-heading">
-                    Punjab <span className="text-[#B23A2E]">Classes</span>
+                    EliteJEE <span className="text-[#B23A2E]">Classes</span>
                   </h4>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#C98A2C] font-bold -mt-0.5 font-mono">
                     Est. 2003
@@ -90,7 +90,7 @@ export default function Footer() {
                   <Phone size={18} />
                 </a>
                 <a
-                  href="mailto:info@punjabclasses.com"
+                  href="mailto:info@elitejeeclasses.com"
                   className="w-10 h-10 bg-[#1B3358]/5 hover:bg-[#1B3358]/10 border border-[#1B3358]/20 rounded-[4px] flex items-center justify-center text-[#B23A2E] transition-all hover:scale-105"
                   aria-label="Email us"
                 >
@@ -173,13 +173,13 @@ export default function Footer() {
                   <span className="font-semibold">WhatsApp Us</span>
                 </a>
                 <a
-                  href="mailto:info@punjabclasses.com"
+                  href="mailto:info@elitejeeclasses.com"
                   className="flex items-center gap-3 text-[#4A5163] hover:text-[#B23A2E] transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-[4px] bg-[#1B3358]/5 flex items-center justify-center group-hover:bg-[#B23A2E]/10 transition-colors">
                     <Mail size={14} className="text-[#B23A2E]" />
                   </div>
-                  <span className="font-semibold">info@punjabclasses.com</span>
+                  <span className="font-semibold">info@elitejeeclasses.com</span>
                 </a>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-[#1B3358]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-[#4A5163]/60">
             <p>
-              © {currentYear} Punjab Classes. All rights reserved.
+              © {currentYear} EliteJEE Classes. All rights reserved.
             </p>
             <p className="flex items-center gap-1 font-bold">
               Helping students crack JEE since 2003 with{' '}

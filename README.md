@@ -1,6 +1,6 @@
-# Punjab Classes Landing Page
+# EliteJEE Classes Landing Page
 
-A premium, highly interactive, and SEO-optimized responsive landing page for **Punjab Classes** — a premier coaching institute for JEE Mains & Advanced preparation.
+A premium, highly interactive, and SEO-optimized responsive landing page for **EliteJEE Classes** — a premier coaching institute for JEE Mains & Advanced preparation.
 
 ## Features
 

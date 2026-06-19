@@ -53,7 +53,7 @@ export default function Navbar() {
             </div>
             <div className="text-left">
               <h1 className="text-xl font-bold text-[#1B3358] leading-tight font-heading">
-                Punjab <span className="text-[#B23A2E]">Classes</span>
+                EliteJEE <span className="text-[#B23A2E]">Classes</span>
               </h1>
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#C98A2C] font-bold -mt-0.5 font-mono">
                 Est. 2003

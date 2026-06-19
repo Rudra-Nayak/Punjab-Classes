@@ -21,15 +21,15 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://punjabclasses.com'),
-  title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+  metadataBase: new URL('https://elitejeeclasses.com'),
+  title: 'EliteJEE Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
   description:
-    'Crack JEE Mains & Advanced with Punjab Classes. Online coaching by Gurwinder Singh Sir — Ex-Senior Faculty at ALLEN, AAKASH & BANSAL with 21+ years of experience. Small batches, personalized mentoring, and 99% success rate. Book your free demo class today!',
+    'Crack JEE Mains & Advanced with EliteJEE Classes. Online coaching by Gurwinder Singh Sir — Ex-Senior Faculty at ALLEN, AAKASH & BANSAL with 21+ years of experience. Small batches, personalized mentoring, and 99% success rate. Book your free demo class today!',
   keywords: [
     'JEE coaching online',
     'JEE Mains preparation',
     'JEE Advanced coaching',
-    'Punjab Classes',
+    'EliteJEE Classes',
     'online JEE classes',
     'best JEE coaching India',
     'IIT JEE preparation',
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     'small batch JEE coaching',
     'Gurwinder Singh JEE coach',
   ],
-  authors: [{ name: 'Punjab Classes' }],
-  creator: 'Punjab Classes',
-  publisher: 'Punjab Classes',
+  authors: [{ name: 'EliteJEE Classes' }],
+  creator: 'EliteJEE Classes',
+  publisher: 'EliteJEE Classes',
   robots: {
     index: true,
     follow: true,
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://punjabclasses.com',
-    siteName: 'Punjab Classes',
-    title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+    url: 'https://elitejeeclasses.com',
+    siteName: 'EliteJEE Classes',
+    title: 'EliteJEE Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
     description:
       'Crack JEE Mains & Advanced with expert mentoring. 21+ years experience, 1000+ students trained, 99% success rate. Book a free demo class now.',
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: '/hero-classroom.png',
         width: 1200,
         height: 630,
-        alt: 'Punjab Classes - Premium JEE Coaching',
+        alt: 'EliteJEE Classes - Premium JEE Coaching',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Punjab Classes | Best Online JEE Coaching',
+    title: 'EliteJEE Classes | Best Online JEE Coaching',
     description:
       'Crack JEE with Ex-ALLEN, AAKASH & BANSAL faculty. 21+ years experience. Book a free demo class today!',
     images: ['/hero-classroom.png'],
@@ -94,19 +94,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <head>
-        <link rel="canonical" href="https://punjabclasses.com" />
+        <link rel="canonical" href="https://elitejeeclasses.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'EducationalOrganization',
-              name: 'Punjab Classes',
+              name: 'EliteJEE Classes',
               description:
                 'Premier online JEE Mains & Advanced coaching by experienced faculty from ALLEN, AAKASH & BANSAL.',
-              url: 'https://punjabclasses.com',
+              url: 'https://elitejeeclasses.com',
               telephone: '+91-98765-43210',
-              email: 'info@punjabclasses.com',
+              email: 'info@elitejeeclasses.com',
               foundingDate: '2003',
               founder: {
                 '@type': 'Person',

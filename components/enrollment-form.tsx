@@ -95,7 +95,7 @@ export default function EnrollmentForm() {
             GET STARTED
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B3358] mb-4 font-heading">
-            Join <span className="text-[#B23A2E]">Punjab Classes</span> Today
+            Join <span className="text-[#B23A2E]">EliteJEE Classes</span> Today
           </h2>
           <div className="w-20 h-1 bg-[#B23A2E] rounded-[2px] mx-auto mb-6" />
           <p className="text-base md:text-lg text-[#4A5163] max-w-2xl mx-auto font-sans">

@@ -68,8 +68,8 @@ export default function InstructorBio() {
               {/* Image Container */}
               <div className="relative w-72 h-80 md:w-80 md:h-[360px] rounded-[4px] border-2 border-[#1B3358] overflow-hidden shadow-[6px_6px_0px_#1B3358]">
                 <Image
-                  src="/gurwinder-sir.png"
-                  alt="Gurwinder Singh Sir - Senior JEE Coach at Punjab Classes with 21+ years of experience"
+                  src="/generic-teacher.png"
+                  alt="Gurwinder Singh Sir - Senior JEE Coach at EliteJEE Classes with 21+ years of experience"
                   fill
                   className="object-cover object-top"
                 />
