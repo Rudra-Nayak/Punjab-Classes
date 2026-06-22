@@ -9,14 +9,21 @@
   --font-sans: var(--font-ibm-plex-sans), sans-serif;
   --font-mono: var(--font-ibm-plex-mono), monospace;
 
-  /* Theme color overrides for 'Answer Sheet' palette */
-  --color-paper: #F1EDE3;
-  --color-paper-light: #FAF8F5;
-  --color-ink-blue: #1B3358;
-  --color-pen-red: #B23A2E;
-  --color-graphite: #4A5163;
-  --color-chalk-gold: #C98A2C;
-  --color-grid-color: #B9C4D6;
+  /* Actual brand color design tokens for Punjab Classes */
+  --color-brand-orange: #FB8B25;
+  --color-brand-green: #019740;
+  --color-brand-green-light: #1FAE5C;
+  --color-brand-black: #000000;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray: #0D0E12;
+
+  --color-paper: #000000;
+  --color-paper-light: #060608;
+  --color-ink-blue: #ffffff;
+  --color-pen-red: #FB8B25;
+  --color-graphite: #cbd5e1;
+  --color-chalk-gold: #019740;
+  --color-grid-color: #11141a;
 
   /* Shadcn/design-system tokens */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -50,53 +57,61 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 :root {
-  color-scheme: light;
-  
-  --background: #F1EDE3;
-  --foreground: #1B3358;
-  --card: #FAF8F5;
-  --card-foreground: #1B3358;
-  --popover: #FAF8F5;
-  --popover-foreground: #1B3358;
-  
-  --primary: #1B3358;
-  --primary-foreground: #F1EDE3;
-  
-  --secondary: #4A5163;
-  --secondary-foreground: #F1EDE3;
-  
-  --muted: #E5DEC9;
-  --muted-foreground: #4A5163;
-  
-  --accent: #B23A2E;
+  color-scheme: dark;
+
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #060608;
+  --card-foreground: #ffffff;
+  --popover: #060608;
+  --popover-foreground: #ffffff;
+
+  --primary: #FB8B25;
+  --primary-foreground: #ffffff;
+
+  --secondary: #019740;
+  --secondary-foreground: #ffffff;
+
+  --muted: #0a0a0c;
+  --muted-foreground: #94a3b8;
+
+  --accent: #FB8B25;
   --accent-foreground: #ffffff;
-  
-  --destructive: #B23A2E;
-  --border: #D8D2C4;
-  --input: #D8D2C4;
-  --ring: #1B3358;
-  --radius: 0.25rem;
+
+  --destructive: #ef4444;
+  --border: #141418;
+  --input: #141418;
+  --ring: #FB8B25;
+  --radius: 0.75rem;
 }
 
 @layer base {
   * {
-    @apply border-border/80 outline-ring/50;
+    @apply border-border/60 outline-ring/40;
   }
+
   body {
-    @apply bg-background text-[#4A5163];
+    @apply bg-background text-slate-300 antialiased;
     font-family: var(--font-ibm-plex-sans), sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-ink-blue font-bold;
-    font-family: var(--font-space-grotesk), sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white font-bold tracking-tight;
+    font-family: var(--font-heading), sans-serif;
   }
+
   html {
     @apply scroll-smooth;
   }
@@ -104,129 +119,210 @@
 
 /* ========== Custom Utility Classes ========== */
 
-/* Paper textures */
+/* Premium Radial Glow & Grid Backgrounds */
 .bg-grid-paper {
-  background-color: #F1EDE3;
-  background-image: 
-    linear-gradient(to right, rgba(185, 196, 214, 0.18) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(185, 196, 214, 0.18) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-color: #000000;
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(251, 139, 37, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 70%, rgba(1, 151, 64, 0.08) 0%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.038) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+.bg-grid-paper-orange {
+  background-color: #060608;
+  background-image:
+    radial-gradient(circle at 80% 50%, rgba(251, 139, 37, 0.10) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.038) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+.bg-grid-paper-green {
+  background-color: #000000;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(1, 151, 64, 0.09) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.038) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
 }
 
 .bg-grid-paper-light {
-  background-color: #FAF8F5;
-  background-image: 
-    linear-gradient(to right, rgba(185, 196, 214, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(185, 196, 214, 0.12) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-color: #060608;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.038) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Red Correction Stamp Circle */
+/* Hand-drawn Green/Orange Accent Ring */
 .correct-circle {
   position: relative;
 }
+
 .correct-circle::after {
   content: '';
   position: absolute;
-  inset: -4px;
-  border: 2px dashed #B23A2E;
+  inset: -6px;
+  border: 1.5px dashed #10b981;
   border-radius: 50%;
   transform: rotate(-3deg);
   pointer-events: none;
 }
 
-/* Solid accent colors */
+/* Gradients text style */
 .text-gradient {
-  color: #B23A2E; /* Pen Red correction color */
+  background-image: linear-gradient(to right, #FB8B25, #FFB066, #FB8B25);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.text-gradient-blue {
-  color: #1B3358; /* Ink Blue */
+
+.text-gradient-green {
+  background-image: linear-gradient(to right, #019740, #1FAE5C, #019740);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Section backgrounds */
 .bg-section-light {
-  @apply bg-[#F1EDE3];
-}
-.bg-section-cream {
-  @apply bg-[#FAF8F5];
-}
-.bg-section-navy {
-  @apply bg-[#1B3358] text-white;
+  @apply bg-[#000000];
 }
 
-/* Stamp-style Button */
+.bg-section-cream {
+  @apply bg-[#060608];
+}
+
+.bg-section-navy {
+  @apply bg-[#000000] text-white;
+}
+
+/* Premium Button style */
 .btn-stamp {
-  background-color: #1B3358;
-  color: #F1EDE3;
-  font-family: var(--font-space-grotesk), sans-serif;
-  font-weight: 700;
-  border-radius: 4px;
-  border: 2px solid #1B3358;
-  box-shadow: 4px 4px 0px #B23A2E;
-  transition: all 0.15s ease-in-out;
+  background: linear-gradient(135deg, #FB8B25 0%, #D2690B 100%);
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(251, 139, 37, 0.5);
+  box-shadow: 0 4px 20px -2px rgba(251, 139, 37, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
+
 .btn-stamp:hover {
-  transform: translate(1px, 1px) rotate(-0.5deg);
-  box-shadow: 3px 3px 0px #B23A2E;
-}
-.btn-stamp:active {
-  transform: translate(4px, 4px) rotate(0deg);
-  box-shadow: 0px 0px 0px #B23A2E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -2px rgba(251, 139, 37, 0.65);
+  border-color: rgba(251, 139, 37, 0.8);
 }
 
-/* Secondary Stamp-style Button */
+.btn-stamp:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px -2px rgba(251, 139, 37, 0.4);
+}
+
+/* Secondary Button — visible on black background via border + inset highlight */
 .btn-stamp-secondary {
   background-color: transparent;
-  color: #1B3358;
-  font-family: var(--font-space-grotesk), sans-serif;
-  font-weight: 700;
-  border-radius: 4px;
-  border: 2px solid #1B3358;
-  box-shadow: 4px 4px 0px #4A5163;
-  transition: all 0.15s ease-in-out;
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
+
 .btn-stamp-secondary:hover {
-  transform: translate(1px, 1px) rotate(0.5deg);
-  box-shadow: 3px 3px 0px #4A5163;
-}
-.btn-stamp-secondary:active {
-  transform: translate(4px, 4px) rotate(0deg);
-  box-shadow: 0px 0px 0px #4A5163;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(251, 139, 37, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(251, 139, 37, 0.12),
+    0 6px 20px -4px rgba(251, 139, 37, 0.25);
 }
 
-/* Graded Sheet Card (Hero visual) */
-.graded-card {
-  background-color: #ffffff;
-  border: 2px solid #1B3358;
-  box-shadow: 8px 8px 0px #B23A2E;
-  border-radius: 4px;
-  transform: rotate(-1.5deg);
-  transition: all 0.3s ease;
+.btn-stamp-secondary:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
+
+/* Green Button — for WhatsApp / green CTAs */
+.btn-stamp-green {
+  background: linear-gradient(135deg, #019740 0%, #016b2c 100%);
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(1, 151, 64, 0.5);
+  box-shadow: 0 4px 20px -2px rgba(1, 151, 64, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-stamp-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -2px rgba(1, 151, 64, 0.65);
+  border-color: rgba(1, 151, 64, 0.8);
+}
+
+.btn-stamp-green:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px -2px rgba(1, 151, 64, 0.4);
+}
+
+/* Graded Sheet Card (Hero visual) - charcoal glassmorphic */
+.graded-card {
+  background-color: rgba(8, 10, 16, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .graded-card:hover {
-  transform: rotate(0deg) scale(1.02);
-  box-shadow: 10px 10px 0px #B23A2E;
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.2);
+  box-shadow:
+    0 30px 50px -15px rgba(249, 115, 22, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Exam Paper Card */
 .exam-card {
-  background-color: #ffffff;
-  border: 2px solid #1B3358;
-  border-radius: 4px;
-  box-shadow: 4px 4px 0px #1B3358;
-  transition: all 0.2s ease;
+  background-color: rgba(8, 10, 16, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .exam-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 6px 6px 0px #1B3358;
+  transform: translateY(-6px);
+  border-color: rgba(249, 115, 22, 0.25);
+  background-color: rgba(8, 10, 16, 0.75);
+  box-shadow:
+    0 20px 40px -10px rgba(249, 115, 22, 0.08),
+    0 0 2px 1px rgba(249, 115, 22, 0.1);
 }
 
 /* Animations */
@@ -235,28 +331,56 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
+
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
 /* Delay utilities */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}

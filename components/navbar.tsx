@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#FAF8F5]/95 border-b-2 border-[#1B3358] py-2 shadow-sm'
+          ? 'bg-black/90 border-b border-[#27272a] py-2 shadow-lg backdrop-blur-md'
           : 'bg-transparent py-4'
       }`}
       role="navigation"
@@ -45,32 +46,32 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group text-left"
             aria-label="Go to top"
           >
-            <div className="w-10 h-10 bg-[#1B3358] border border-[#1B3358] rounded-[4px] flex items-center justify-center shadow-[2px_2px_0px_#B23A2E] transition-all group-hover:translate-x-[1px] group-hover:translate-y-[1px] group-hover:shadow-[1px_1px_0px_#B23A2E]">
-              <GraduationCap size={22} className="text-[#F1EDE3]" />
-            </div>
-            <div className="text-left">
-              <h1 className="text-xl font-bold text-[#1B3358] leading-tight font-heading">
-                EliteJEE <span className="text-[#B23A2E]">Classes</span>
-              </h1>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-[#C98A2C] font-bold -mt-0.5 font-mono">
-                Est. 2003
-              </p>
+            <div className="relative h-12 w-44 overflow-hidden">
+              <Image
+                src="/logo.png"
+                alt="Punjab Classes Logo"
+                fill
+                priority
+                className="object-contain object-left"
+              />
             </div>
           </button>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="px-4 py-2 text-sm font-semibold text-[#1B3358]/80 hover:text-[#B23A2E] transition-colors rounded-lg hover:bg-[#1B3358]/5 font-heading"
-              >
-                {link.label}
-              </button>
+            {navLinks.map((link, index) => (
+              <div key={link.id} className="flex items-center">
+                {index > 0 && <span className="text-zinc-700 text-[10px] mx-1 select-none">✦</span>}
+                <button
+                  onClick={() => scrollToSection(link.id)}
+                  className="px-4 py-2 text-sm font-semibold text-zinc-300 hover:text-brand-orange transition-colors rounded-lg hover:bg-white/5 font-heading cursor-pointer"
+                >
+                  {link.label}
+                </button>
+              </div>
             ))}
             <button
               onClick={() => scrollToSection('enrollment')}
@@ -83,7 +84,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-[#1B3358] hover:text-[#B23A2E] transition-colors rounded-lg hover:bg-[#1B3358]/5"
+            className="lg:hidden p-2 text-white hover:text-brand-orange transition-colors rounded-lg hover:bg-white/5"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -93,16 +94,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-400 ease-in-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-455 ease-in-out ${
             isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="bg-[#FAF8F5] border-2 border-[#1B3358] shadow-[4px_4px_0px_#B23A2E] rounded-[4px] p-4 space-y-1">
+          <div className="bg-zinc-950/90 backdrop-blur-lg border border-zinc-800/60 shadow-[0_10px_30px_-10px_rgba(251,139,37,0.15)] rounded-xl p-4 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left px-4 py-2.5 text-[#1B3358] hover:text-[#B23A2E] hover:bg-[#1B3358]/5 rounded-[4px] transition-colors font-semibold text-sm font-heading"
+                className="block w-full text-left px-4 py-2.5 text-zinc-300 hover:text-brand-orange hover:bg-white/5 rounded-lg transition-colors font-semibold text-sm font-heading"
               >
                 {link.label}
               </button>

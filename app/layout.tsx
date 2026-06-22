@@ -21,15 +21,15 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://elitejeeclasses.com'),
-  title: 'EliteJEE Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+  metadataBase: new URL('https://punjabclasses.com'),
+  title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
   description:
-    'Crack JEE Mains & Advanced with EliteJEE Classes. Online coaching by Gurwinder Singh Sir — Ex-Senior Faculty at ALLEN, AAKASH & BANSAL with 21+ years of experience. Small batches, personalized mentoring, and 99% success rate. Book your free demo class today!',
+    'Crack JEE Mains & Advanced with Punjab Classes. Online coaching by Gurwinder Singh Sir — Ex-Senior Faculty at ALLEN, AAKASH & BANSAL with 21+ years of experience. Small batches, personalized mentoring, and 99% success rate. Book your free demo class today!',
   keywords: [
     'JEE coaching online',
     'JEE Mains preparation',
     'JEE Advanced coaching',
-    'EliteJEE Classes',
+    'Punjab Classes',
     'online JEE classes',
     'best JEE coaching India',
     'IIT JEE preparation',
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     'small batch JEE coaching',
     'Gurwinder Singh JEE coach',
   ],
-  authors: [{ name: 'EliteJEE Classes' }],
-  creator: 'EliteJEE Classes',
-  publisher: 'EliteJEE Classes',
+  authors: [{ name: 'Punjab Classes' }],
+  creator: 'Punjab Classes',
+  publisher: 'Punjab Classes',
   robots: {
     index: true,
     follow: true,
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://elitejeeclasses.com',
-    siteName: 'EliteJEE Classes',
-    title: 'EliteJEE Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
+    url: 'https://punjabclasses.com',
+    siteName: 'Punjab Classes',
+    title: 'Punjab Classes | Best Online JEE Coaching by Ex-ALLEN, AAKASH & BANSAL Faculty',
     description:
       'Crack JEE Mains & Advanced with expert mentoring. 21+ years experience, 1000+ students trained, 99% success rate. Book a free demo class now.',
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: '/hero-classroom.png',
         width: 1200,
         height: 630,
-        alt: 'EliteJEE Classes - Premium JEE Coaching',
+        alt: 'Punjab Classes - Premium JEE Coaching',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EliteJEE Classes | Best Online JEE Coaching',
+    title: 'Punjab Classes | Best Online JEE Coaching',
     description:
       'Crack JEE with Ex-ALLEN, AAKASH & BANSAL faculty. 21+ years experience. Book a free demo class today!',
     images: ['/hero-classroom.png'],
@@ -80,8 +80,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#0f2240',
+  colorScheme: 'dark',
+  themeColor: '#000000',
   width: 'device-width',
   initialScale: 1,
 }
@@ -94,19 +94,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <head>
-        <link rel="canonical" href="https://elitejeeclasses.com" />
+        <link rel="canonical" href="https://punjabclasses.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'EducationalOrganization',
-              name: 'EliteJEE Classes',
+              name: 'Punjab Classes',
               description:
                 'Premier online JEE Mains & Advanced coaching by experienced faculty from ALLEN, AAKASH & BANSAL.',
-              url: 'https://elitejeeclasses.com',
+              url: 'https://punjabclasses.com',
               telephone: '+91-98765-43210',
-              email: 'info@elitejeeclasses.com',
+              email: 'info@punjabclasses.com',
               foundingDate: '2003',
               founder: {
                 '@type': 'Person',
@@ -127,7 +127,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#F1EDE3] text-[#1B3358]">
+      <body className="font-sans antialiased bg-black text-zinc-300">
         {children}
       </body>
     </html>

@@ -66,33 +66,33 @@ export default function BatchTimings() {
   };
 
   return (
-    <section id="batches" className="py-24 px-4 bg-section-cream border-t border-[#1B3358]/10" ref={ref}>
+    <section id="batches" className="py-24 px-4 bg-grid-paper-orange border-t border-zinc-800/80" ref={ref}>
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <p className="text-[#C98A2C] font-bold text-xs tracking-widest uppercase mb-3 font-mono">
-            SCHEDULE
+          <p className="text-secondary font-bold text-xs tracking-widest uppercase mb-3 font-mono flex items-center justify-center gap-2">
+            ✦ SCHEDULE ✦
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B3358] mb-4 font-heading">
-            Batch <span className="text-[#B23A2E]">Timings</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-heading">
+            Batch <span className="text-primary">Timings</span>
           </h2>
-          <div className="w-20 h-1 bg-[#B23A2E] rounded-[2px] mx-auto mb-6" />
-          <p className="text-base md:text-lg text-[#4A5163] max-w-2xl mx-auto font-sans">
+          <div className="w-20 h-1 bg-primary rounded-[2px] mx-auto mb-6" />
+          <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-sans">
             Classes held 3 days a week — Choose your preferred time slot
           </p>
         </div>
 
         {/* Class Selection Toggle */}
         <div className={`flex justify-center mb-12 ${inView ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
-          <div className="inline-flex bg-white border-2 border-[#1B3358] rounded-[4px] p-1.5 shadow-[4px_4px_0px_#1B3358]">
+          <div className="inline-flex bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
             {(['11', '12'] as const).map((cls) => (
               <button
                 key={cls}
                 onClick={() => setSelectedClass(cls)}
-                className={`px-8 py-2.5 rounded-[2px] font-bold text-sm transition-all duration-300 font-heading ${
+                className={`px-8 py-2.5 rounded-lg font-bold text-sm transition-all duration-300 font-heading ${
                   selectedClass === cls
-                    ? 'bg-[#1B3358] text-[#F1EDE3] shadow-md'
-                    : 'text-[#1B3358] hover:text-[#B23A2E] hover:bg-[#1B3358]/5'
+                    ? 'bg-brand-orange text-white shadow-md shadow-brand-orange/20'
+                    : 'text-zinc-400 hover:text-brand-green-light hover:bg-white/5'
                 }`}
               >
                 Class {cls}
@@ -111,30 +111,28 @@ export default function BatchTimings() {
             return (
               <div
                 key={index}
-                className={`relative rounded-[4px] overflow-hidden border-2 border-[#1B3358] transition-all duration-300 ${
+                className={`relative rounded-2xl overflow-hidden border transition-all duration-300 bg-zinc-900/40 backdrop-blur-md ${
                   batch.featured
-                    ? 'ring-2 ring-[#B23A2E] shadow-[6px_6px_0px_#B23A2E]'
-                    : 'shadow-[4px_4px_0px_#1B3358] hover:shadow-[6px_6px_0px_#1B3358] hover:-translate-y-1'
+                    ? 'border-brand-orange/40 ring-1 ring-brand-orange/20 shadow-[0_15px_40px_rgba(251,139,37,0.15)] bg-zinc-900/60'
+                    : 'border-zinc-800/80 shadow-none hover:border-brand-orange/30 hover:-translate-y-1 hover:bg-zinc-900/50'
                 } ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${(index + 2) * 100}ms` }}
               >
                 {/* Featured Tag */}
                 {batch.featured && (
                   <div className="absolute top-0 right-0 z-10">
-                    <div className="bg-[#B23A2E] text-white border-b-2 border-l-2 border-[#1B3358] px-3 py-1 font-bold text-[10px] uppercase tracking-wider flex items-center gap-1 font-mono">
+                    <div className="bg-brand-green text-white border-b border-l border-brand-green/20 px-3 py-1 font-bold text-[10px] uppercase tracking-wider flex items-center gap-1 font-mono rounded-bl-lg">
                       <Zap size={10} /> Popular
                     </div>
                   </div>
                 )}
 
                 {/* Card Content */}
-                <div className={`p-6 h-full flex flex-col justify-between ${
-                  batch.featured ? 'bg-[#1B3358] text-white' : 'bg-white text-[#1B3358]'
-                }`}>
+                <div className="p-6 h-full flex flex-col justify-between text-white">
                   <div>
                     {/* Header Icon */}
-                    <div className={`w-10 h-10 rounded-[4px] flex items-center justify-center mb-5 ${
-                      batch.featured ? 'bg-[#F1EDE3]/10 text-white' : 'bg-[#1B3358]/10 text-[#1B3358]'
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-5 ${
+                      batch.featured ? 'bg-brand-green/10 border border-brand-green/20 text-brand-green-light' : 'bg-zinc-900 border border-zinc-800 text-brand-orange'
                     }`}>
                       <batch.icon size={22} />
                     </div>
@@ -145,24 +143,24 @@ export default function BatchTimings() {
                     {/* Details */}
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3">
-                        <Clock size={16} className={batch.featured ? 'text-[#C98A2C]' : 'text-[#B23A2E]'} />
+                        <Clock size={16} className={batch.featured ? 'text-brand-green-light' : 'text-brand-orange'} />
                         <div>
-                          <p className={`text-[10px] uppercase tracking-wider font-mono ${batch.featured ? 'text-white/60' : 'text-[#4A5163]/60'}`}>
+                          <p className="text-[10px] uppercase tracking-wider font-mono text-zinc-500">
                             TIMING
                           </p>
-                          <p className="font-bold text-xs font-mono">
+                          <p className="font-bold text-xs font-mono text-zinc-300">
                             {batch.time}
                           </p>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <Calendar size={16} className={batch.featured ? 'text-[#C98A2C]' : 'text-[#B23A2E]'} />
+                        <Calendar size={16} className={batch.featured ? 'text-brand-green-light' : 'text-brand-orange'} />
                         <div>
-                          <p className={`text-[10px] uppercase tracking-wider font-mono ${batch.featured ? 'text-white/60' : 'text-[#4A5163]/60'}`}>
+                          <p className="text-[10px] uppercase tracking-wider font-mono text-zinc-500">
                             DAYS
                           </p>
-                          <p className="font-bold text-xs font-mono">
+                          <p className="font-bold text-xs font-mono text-zinc-300">
                             {batch.days}
                           </p>
                         </div>
@@ -172,49 +170,38 @@ export default function BatchTimings() {
 
                   {/* Seat Progress */}
                   <div>
-                    <div className={`p-3 rounded-[4px] mb-5 border ${
-                      batch.featured ? 'bg-white/5 border-white/10' : 'bg-[#FAF8F5] border-[#1B3358]/10'
-                    }`}>
+                    <div className="p-3 rounded-xl mb-5 border bg-zinc-950/50 border-zinc-900/80">
                       <div className="flex justify-between items-center mb-2 font-mono text-[10px]">
-                        <span className="flex items-center gap-1 font-semibold">
+                        <span className="flex items-center gap-1 font-semibold text-zinc-400">
                           <Users size={10} />
                           SEATS FILLED
                         </span>
-                        <span className={`font-bold ${isFull ? 'text-red-400' : batch.featured ? 'text-white' : 'text-[#1B3358]'}`}>
+                        <span className={`font-bold ${isFull ? 'text-red-450' : 'text-zinc-300'}`}>
                           {batch.seats}/{batch.total}
                         </span>
                       </div>
-                      <div className={`w-full h-2 rounded-[2px] ${batch.featured ? 'bg-white/10' : 'bg-[#1B3358]/10'}`}>
+                      <div className="w-full h-2 rounded-[2px] bg-zinc-800">
                         <div
                           className={`h-full rounded-[2px] transition-all duration-1000 ${
                             isFull
                               ? 'bg-red-500'
-                              : batch.featured ? 'bg-[#C98A2C]' : 'bg-[#B23A2E]'
+                              : batch.featured ? 'bg-brand-green' : 'bg-brand-orange'
                           }`}
                           style={{ width: `${seatPercentage}%` }}
                         />
                       </div>
                       {isFull && (
-                        <p className="text-red-400 text-[10px] font-bold mt-1.5 font-mono uppercase">Batch Full</p>
+                        <p className="text-red-450 text-[10px] font-bold mt-1.5 font-mono uppercase">Batch Full</p>
                       )}
                     </div>
 
                     {/* CTA */}
-                    {batch.featured ? (
-                      <button
-                        onClick={enrollmentLink}
-                        className="w-full py-2.5 bg-[#B23A2E] text-white border-2 border-white rounded-[4px] font-bold text-xs uppercase tracking-wider shadow-[3px_3px_0px_#C98A2C] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_#C98A2C] transition-all active:translate-x-[3px] active:translate-y-[3px] active:shadow-none"
-                      >
-                        {isFull ? 'Join Waitlist' : 'Enroll Now'}
-                      </button>
-                    ) : (
-                      <button
-                        onClick={enrollmentLink}
-                        className="w-full py-2.5 btn-stamp text-xs uppercase tracking-wider"
-                      >
-                        {isFull ? 'Join Waitlist' : 'Enroll Now'}
-                      </button>
-                    )}
+                    <button
+                      onClick={enrollmentLink}
+                      className="w-full py-2.5 btn-stamp text-xs uppercase tracking-wider"
+                    >
+                      {isFull ? 'Join Waitlist' : 'Enroll Now'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -223,15 +210,14 @@ export default function BatchTimings() {
         </div>
 
         {/* Info Box / Notice */}
-        <div className={`bg-white border-2 border-dashed border-[#1B3358] rounded-[4px] p-6 text-center max-w-4xl mx-auto shadow-sm ${
+        <div className={`bg-zinc-900/30 backdrop-blur-md border border-dashed border-brand-orange/40 rounded-2xl p-6 text-center max-w-4xl mx-auto shadow-[0_15px_30px_rgba(0,0,0,0.2)] ${
           inView ? 'animate-fade-in-up delay-600' : 'opacity-0'
         }`}>
-          <p className="text-base text-[#1B3358] mb-1 font-heading">
-            <span className="text-[#B23A2E] font-bold font-mono">IMPORTANT NOTICE:</span> All batches cover the complete Class {selectedClass} JEE curriculum
+          <p className="text-base text-white mb-1 font-heading">
+            <span className="text-brand-green-light font-bold font-mono">IMPORTANT NOTICE:</span> All batches cover the complete Class {selectedClass} JEE curriculum
           </p>
-          <p className="text-sm text-[#4A5163] font-sans">
-            Classes are held on <span className="font-bold text-[#1B3358]">Monday, Wednesday, and Friday</span> every
-            week &bull; 80 min/class &bull; Weekly doubt clearing sessions included.
+          <p className="text-sm text-zinc-400 font-sans">
+            Classes are held on <span className="font-bold text-brand-orange">Monday, Wednesday, and Friday</span> every week &bull; 80 min/class &bull; Weekly doubt clearing sessions included.
           </p>
         </div>
       </div>
